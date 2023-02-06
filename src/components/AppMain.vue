@@ -1,10 +1,12 @@
 <script>
-import allCards from './allCards.vue'
-
-export default {
+export default{
     name: 'AppMain',
-    components: {
-        allCards
+    props: {
+        listCard:{
+            type: Array,
+            default: [],
+        }
+        
     }
 }
 
@@ -16,14 +18,26 @@ export default {
             <p class="p-3 m-0">found 39 cards</p>
         </section>
 
-        <section class="my-cards row text-center">
-            <div class="col-2">
-                <allCards />
+        <section class="my-cards row row-cols-5 text-center">
+            <div class="col" v-for="card in listCard">
+                <div class="img-card">
+                    <img :src="card.card_images.image_url" alt="">
+                </div>
+                <div class="info-card">
+                    <h4 class="text-white pt-1">{{ card.name }}</h4>
+                    <p>{{ card.archetype }}</p>
+                </div>
             </div>
         </section>
     </div>
 </template>
 
 <style lang="scss" scoped>
-
+.img-card{
+    height: 200px;
+    background-color: red;
+}
+.info-card{
+    background-color: orange;
+}
 </style>
