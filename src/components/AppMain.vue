@@ -15,7 +15,7 @@ export default{
 <template>
     <div class="container p-5 bg-white">
         <section class=" my-found bg-dark text-white w-100">
-            <p class="p-3 m-0">found 39 cards</p>
+            <p class="p-3 m-0">Found {{ listCard.length }} cards</p>
         </section>
 
         <section class="my-cards row row-cols-5 text-center">
