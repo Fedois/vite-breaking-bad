@@ -21,56 +21,11 @@ export default{
                     <p>ciao</p>
                 </div>
             </div>
-            <div class="col-2">
-                <div class="img-card pb-2">
-                    <img src="" alt="">
-                </div>
-                <div class="info-card">
-                    <h3 class="text-white">ciao</h3>
-                    <p>ciao</p>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="img-card pb-2">
-                    <img src="" alt="">
-                </div>
-                <div class="info-card">
-                    <h3 class="text-white">ciao</h3>
-                    <p>ciao</p>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="img-card pb-2">
-                    <img src="" alt="">
-                </div>
-                <div class="info-card">
-                    <h3 class="text-white">ciao</h3>
-                    <p>ciao</p>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="img-card pb-2">
-                    <img src="" alt="">
-                </div>
-                <div class="info-card">
-                    <h3 class="text-white">ciao</h3>
-                    <p>ciao</p>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="img-card pb-2">
-                    <img src="" alt="">
-                </div>
-                <div class="info-card">
-                    <h3 class="text-white">ciao</h3>
-                    <p>ciao</p>
-                </div>
-            </div>
         </section>
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .img-card{
     height: 200px;
     background-color: red;

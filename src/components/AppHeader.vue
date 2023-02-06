@@ -9,14 +9,11 @@ export default {
 </script>
 
 <template>
-    <div class="title py-2 px-4">
+    <div class="title py-2 px-4 bg-white">
         <h1>Yu-Gi-Oh Api</h1>
     </div>
     <SearchInput />
 </template>
 
-<style scoped>
-.title{
-    background-color: white;
-}
+<style lang="scss" scoped>
 </style>
