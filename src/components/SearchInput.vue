@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <div class="input m-auto p-4">
+    <div class="input ms-5 p-4">
          <form action="">
             <select class="p-1 border-0 rounded" name="select" id="select">
                 <option value="alien">Alien</option>
@@ -16,11 +16,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.input{
-    width: 1400px;
-
-    select{
-        width: 130px;
-    }
+select{
+    width: 130px;
 }
 </style>

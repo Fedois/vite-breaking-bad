@@ -18,10 +18,10 @@ export default{
             <p class="p-3 m-0">Found {{ listCard.length }} cards</p>
         </section>
 
-        <section class="my-cards row row-cols-5 text-center">
+        <section class="my-cards row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 text-center">
             <div class="col mb-3" v-for="(card, index) in listCard">
                 <div class="img-card" v-for="img in card.card_images">
-                    <img :src="img.image_url" alt="">
+                    <img :src="img.image_url" :alt="card.name">
                 </div>
                 <div class="info-card p-2">
                     <h4 class="text-white pt-1">{{ card.name }}</h4>
