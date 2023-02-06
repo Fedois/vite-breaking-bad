@@ -19,11 +19,11 @@ export default{
         </section>
 
         <section class="my-cards row row-cols-5 text-center">
-            <div class="col" v-for="card in listCard">
-                <div class="img-card">
-                    <img :src="card.card_images.image_url" alt="">
+            <div class="col mb-3" v-for="(card, index) in listCard">
+                <div class="img-card" v-for="img in card.card_images">
+                    <img :src="img.image_url" alt="">
                 </div>
-                <div class="info-card">
+                <div class="info-card p-2">
                     <h4 class="text-white pt-1">{{ card.name }}</h4>
                     <p>{{ card.archetype }}</p>
                 </div>
@@ -33,11 +33,11 @@ export default{
 </template>
 
 <style lang="scss" scoped>
-.img-card{
-    height: 200px;
-    background-color: red;
+img{
+    width: 100%;
 }
 .info-card{
     background-color: orange;
+    height: 100px;
 }
 </style>
