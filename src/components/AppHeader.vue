@@ -15,21 +15,27 @@ export default {
     },
     methods:{
         getCards(){
+            this.store.loading = true
+            
             if(this.store.archetypeValue == ''){
                 axios
                     .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?')
                     .then((response) => {
-                    this.store.listCards = response.data.data.slice(0,50);
-                    console.log(this.store.listCards)
-                })
+                        this.store.listCards = response.data.data.slice(0,100);
+                        console.log(this.store.listCards)
+
+                        this.store.loading = false
+                    })
             }
             else{
                 axios
                     .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=' + this.store.archetypeValue)
                     .then((response) => {
-                    this.store.listCards = response.data.data.slice(0,50);
-                    console.log(this.store.listCards)
-                })
+                        this.store.listCards = response.data.data.slice(0,100);
+                        console.log(this.store.listCards)
+
+                        this.store.loading = false
+                    })
             }
         }
     },

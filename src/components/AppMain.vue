@@ -17,7 +17,11 @@ export default{
             <p class="p-3 m-0">Found {{ store.listCards.length }} cards</p>
         </section>
 
-        <section class="my-cards row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 text-center">
+        <div class="loading text-center my-3" v-if="store.loading">
+            LOADING...
+        </div>
+
+        <section v-else class="my-cards row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 text-center">
             <div class="col mb-3" v-for="card in store.listCards">
                 <div class="img-card" v-for="img in card.card_images">
                     <img :src="img.image_url" :alt="card.name">
