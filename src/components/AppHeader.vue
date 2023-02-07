@@ -1,5 +1,6 @@
 <script>
 import SearchInput from './SearchInput.vue'
+
 export default {
     name: 'AppHeader',
     components: {

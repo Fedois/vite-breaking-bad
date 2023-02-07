@@ -5,10 +5,10 @@ import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 
 export default {
-  name: 'App',
-  components: {
-    AppHeader,
-    AppMain,
+    name: 'App',
+    components: {
+      AppHeader,
+      AppMain,
   },
   data(){
     return{
@@ -19,8 +19,15 @@ export default {
     axios
     .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?&fname=Alien')
     .then((response) => {
-      console.log(response.data.data)
       this.store.listCards = response.data.data.slice(0,20);
+      console.log(this.store.listCards)
+    })
+
+    axios
+    .get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+    .then((response) => {
+      this.store.listArchetypes = response.data.slice(0,20);
+      console.log(this.store.listArchetypes)
     })
   }
 }
@@ -28,7 +35,7 @@ export default {
 
 <template>
     <AppHeader />
-    <AppMain :listCard = "store.listCards"/>
+    <AppMain />
 </template>
 
 <style lang="scss">

@@ -1,6 +1,12 @@
 <script>
+import { store } from '../store.js'
 export default {
-    name: 'SearchInput'
+    name: 'SearchInput',
+    data(){
+        return{
+            store
+        }
+    }
 }
 </script>
 
@@ -8,7 +14,8 @@ export default {
     <div class="input ms-5 p-4">
          <form action="">
             <select class="p-1 border-0 rounded" name="select" id="select">
-                <option value="alien">Alien</option>
+                <option v-for="(archetype, index) in store.listArchetypes" 
+                :value="archetype.archetype_name">{{ archetype.archetype_name }}</option>
             </select>
         </form>
     </div>
