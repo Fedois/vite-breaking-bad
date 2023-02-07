@@ -1,10 +1,13 @@
 <script>
 import {store} from '../store.js'
-export default{
+import loader from './loader.vue'
+
+export default {
     name: 'AppMain',
     data(){
         return{
-            store
+            store,
+            loader
         }
     }
 }
@@ -22,6 +25,8 @@ export default{
                 <span class="my-spinner visually-hidden">Loading...</span>
             </div>
         </div>
+
+        <loader v-if="store.loading" />
 
         <section v-else class="my-cards row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 text-center">
             <div class="col mb-3" v-for="card in store.listCards">
