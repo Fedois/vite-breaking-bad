@@ -22,7 +22,7 @@ export default {
                     .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?')
                     .then((response) => {
                         this.store.listCards = response.data.data.slice(0,100);
-                        console.log(this.store.listCards)
+                        // console.log(this.store.listCards)
 
                         this.store.loading = false
                     })
@@ -32,7 +32,7 @@ export default {
                     .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=' + this.store.archetypeValue)
                     .then((response) => {
                         this.store.listCards = response.data.data.slice(0,100);
-                        console.log(this.store.listCards)
+                        // console.log(this.store.listCards)
 
                         this.store.loading = false
                     })
@@ -45,7 +45,7 @@ export default {
             .then((response) => {
 
             this.store.listArchetypes = response.data;
-            console.log(this.store.listArchetypes)
+            // console.log(this.store.listArchetypes)
         })
         
         this.getCards()

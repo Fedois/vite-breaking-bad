@@ -17,8 +17,10 @@ export default{
             <p class="p-3 m-0">Found {{ store.listCards.length }} cards</p>
         </section>
 
-        <div class="loading text-center my-3" v-if="store.loading">
-            LOADING...
+        <div class="loading text-center my-5" v-if="store.loading">
+            <div class="spinner-border text-dark align-middle" role="status">
+                <span class="my-spinner visually-hidden">Loading...</span>
+            </div>
         </div>
 
         <section v-else class="my-cards row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 text-center">
