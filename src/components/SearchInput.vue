@@ -12,11 +12,11 @@ export default {
 
 <template>
     <div class="input ms-5 p-4">
-        <form action="">
+         <form action="">
             <select class="p-1 border-0 rounded" name="select" id="select" v-model="store.archetypeValue" @change="$emit('search')">
                 <option value="">allCards</option>
-                    <option v-for="archetype in store.listArchetypes" 
-                    :value="archetype.archetype_name">{{ archetype.archetype_name }} 
+                <option v-for="archetype in store.listArchetypes" 
+                :value="archetype.archetype_name">{{ archetype.archetype_name }} 
                 </option>
             </select>
         </form>
