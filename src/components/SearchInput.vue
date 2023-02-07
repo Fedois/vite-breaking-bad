@@ -14,12 +14,13 @@ export default {
     <div class="input ms-5 p-4">
          <form action="" @submit.prevent="$emit('search')">
             <select class="p-1 border-0 rounded" name="select" id="select" v-model="store.archetypeValue">
-                    <option v-for="(archetype, index) in store.listArchetypes" selected 
+                <option value="">allCards</option>
+                    <option v-for="archetype in store.listArchetypes" 
                     :value="archetype.archetype_name">{{ archetype.archetype_name }} 
                 </option>
             </select>
             
-            <button class="ms-3" type="submint">search</button>
+            <button class="ms-3 border-0 p-1 rounded" type="submint">search</button>
         </form>
     </div>
    

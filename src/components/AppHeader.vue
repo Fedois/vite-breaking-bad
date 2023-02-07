@@ -15,12 +15,22 @@ export default {
     },
     methods:{
         getCards(){
-            axios
-                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype' + '=' + this.store.archetypeValue)
-                .then((response) => {
-                this.store.listCards = response.data.data.slice(0,50);
-                console.log(this.store.listCards)
-            })
+            if(this.store.archetypeValue == ''){
+                axios
+                    .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?')
+                    .then((response) => {
+                    this.store.listCards = response.data.data.slice(0,50);
+                    console.log(this.store.listCards)
+                })
+            }
+            else{
+                axios
+                    .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=' + this.store.archetypeValue)
+                    .then((response) => {
+                    this.store.listCards = response.data.data.slice(0,50);
+                    console.log(this.store.listCards)
+                })
+            }
         }
     },
     created(){
