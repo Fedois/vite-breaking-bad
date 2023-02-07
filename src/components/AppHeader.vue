@@ -16,7 +16,7 @@ export default {
     methods:{
         getCards(){
             axios
-                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=' + this.store.archetypeValue)
+                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype' + '=' + this.store.archetypeValue)
                 .then((response) => {
                 this.store.listCards = response.data.data.slice(0,50);
                 console.log(this.store.listCards)
@@ -28,7 +28,7 @@ export default {
             .get('https://db.ygoprodeck.com/api/v7/archetypes.php')
             .then((response) => {
 
-            this.store.listArchetypes = response.data.slice(0,20);
+            this.store.listArchetypes = response.data;
             console.log(this.store.listArchetypes)
         })
         
