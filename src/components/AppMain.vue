@@ -37,6 +37,5 @@ img{
 }
 .info-card{
     background-color: orange;
-    height: 100px;
 }
 </style>

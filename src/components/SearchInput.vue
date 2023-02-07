@@ -12,11 +12,14 @@ export default {
 
 <template>
     <div class="input ms-5 p-4">
-         <form action="">
-            <select class="p-1 border-0 rounded" name="select" id="select">
-                <option v-for="(archetype, index) in store.listArchetypes" 
-                :value="archetype.archetype_name">{{ archetype.archetype_name }}</option>
+         <form action="" @submit.prevent="$emit('search')">
+            <select class="p-1 border-0 rounded" name="select" id="select" v-model="store.archetypeValue">
+                    <option v-for="(archetype, index) in store.listArchetypes" 
+                    :value="archetype.archetype_name">{{ archetype.archetype_name }} 
+                </option>
             </select>
+            
+            <button class="ms-3" type="submint">search</button>
         </form>
     </div>
    
