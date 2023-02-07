@@ -1,12 +1,11 @@
 <script>
+import {store} from '../store.js'
 export default{
     name: 'AppMain',
-    props: {
-        listCard:{
-            type: Array,
-            default: [],
+    data(){
+        return{
+            store
         }
-        
     }
 }
 
@@ -15,11 +14,11 @@ export default{
 <template>
     <div class="container p-5 bg-white">
         <section class=" my-found bg-dark text-white w-100">
-            <p class="p-3 m-0">Found {{ listCard.length }} cards</p>
+            <p class="p-3 m-0">Found {{ store.listCards.length }} cards</p>
         </section>
 
         <section class="my-cards row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 text-center">
-            <div class="col mb-3" v-for="(card, index) in listCard">
+            <div class="col mb-3" v-for="card in store.listCards">
                 <div class="img-card" v-for="img in card.card_images">
                     <img :src="img.image_url" :alt="card.name">
                 </div>

@@ -1,4 +1,5 @@
 <script>
+import { store } from './store.js'
 import axios from 'axios'
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
@@ -11,7 +12,7 @@ export default {
   },
   data(){
     return{
-      listAlien: []
+      store
     }
   },
   created(){
@@ -19,7 +20,7 @@ export default {
     .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?&fname=Alien')
     .then((response) => {
       console.log(response.data.data)
-      this.listAlien = response.data.data.slice(0,20);
+      this.store.listCards = response.data.data.slice(0,20);
     })
   }
 }
@@ -27,7 +28,7 @@ export default {
 
 <template>
     <AppHeader />
-    <AppMain :listCard = "listAlien"/>
+    <AppMain :listCard = "store.listCards"/>
 </template>
 
 <style lang="scss">
